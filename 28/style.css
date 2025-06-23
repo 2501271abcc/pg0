@@ -1,0 +1,363 @@
+html{
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	height: 100%;
+	font-family: "M PLUS Rounded 1c";
+}
+
+/* ナビゲーションメニュー */
+
+.sidediv{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 15%;
+	box-sizing: border-box;
+	height: 100%;
+	background-color: #4682b4;
+	padding: 10px;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav li{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+nav a{
+	color: white;
+	text-decoration: none;
+	display: block;
+}
+
+/* 今いるページテキスト色変え */
+
+.now{
+	color: black;
+}
+
+
+/* 2カラム */
+
+.content{
+	margin-left: 17%;
+	width: 75%;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+
+header .head{
+	margin-left: 15%;
+	width: 85%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 30vh;
+
+}
+
+/* ヘッダーの画像 */
+
+body#home header .head{
+	background: url("image/soto.png");
+}
+
+body#food header .head {
+	background: url(https://img.freepik.com/free-photo/top-view-table-full-food_23-2149209253.jpg?ga=GA1.1.2094032325.1750211921&semt=ais_hybrid&w=740);
+}
+
+body#comic header .head {
+	background: url("image/manga.png");
+}
+body#game header .head {
+	background: url("image/gameimg.png");
+}
+
+body#dog header .head {
+	background: url("image/kora.png");
+}
+
+body#Pokémon header .head{
+	background: url(https://www.pokemon-card.com/info/2020/06/images/ZOOM_ene.jpg);
+}
+
+
+/* トップ文字の縁取り */
+
+header h1{
+	
+	text-align: center;
+	color: white;
+	
+text-shadow:
+	-1px -1px 0 black,
+	1px -1px 0 black,
+	-1px 1px 0 black,
+	1px 1px 0 black;
+
+	margin: 0;
+}
+
+/* 文字縦書き */
+
+#comic h2, #game h2{
+	writing-mode: vertical-rl;
+}
+
+#comic h3{
+	text-align: center;
+}
+
+/* ナビゲーションのアニメーション */
+
+.anim-box.kiran {
+	opacity: 1;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.anim-box.kiran::before {
+	background-color: #fff;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -100px;
+	left: 0;
+	width: 30px;
+	height: 100%;
+	opacity: 0;
+	transition: cubic-bezier(0.32, 0, 0.67, 0);
+}
+.anim-box.kiran:hover::before {
+	animation: kiran 0.5s linear;
+}
+
+@keyframes kiran {
+0% {
+	transform: scale(2) rotate(45deg);
+	opacity: 0;
+}
+20% {
+	transform: scale(20) rotate(45deg);
+	opacity: 0.6;
+}
+40% {
+	transform: scale(30) rotate(45deg);
+	opacity: 0.4;
+}
+80% {
+	transform: scale(45) rotate(45deg);
+	opacity: 0.2;
+}
+100% {
+	transform: scale(50) rotate(45deg);
+	opacity: 0;
+}
+}
+
+.anim-box.slidein.is-animated{
+animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideIn {
+0% {
+    transform: translateX(180px);
+    opacity: 0;
+}
+100% {
+    transform: translateX(0);
+}
+40%,100% {
+    opacity: 1;
+}
+}
+
+/* 画像サイズ */
+
+.content img {
+	width: 90%;
+	height: auto;
+}
+
+#comic img{
+	width: 40%;
+	margin: 5%;
+}
+
+#comic .control a{
+	text-decoration: none;
+	color: black;
+}
+
+#comic a:hover, #game a:hover{
+	background-color: #4682b4;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#dog img{
+	width: 100%;
+	max-width: 400px;
+	margin: 10%;
+	border-radius: 5px;
+	width: calc(50% -20px);
+}
+
+#game img{
+	width: 50%;
+	max-width: 300px;
+	height: auto;
+}
+
+#Pokémon img{
+	width: 45%;
+}
+
+#home img{
+	width: 50%;
+}
+
+/* 改行なし */
+
+#dog p{
+	white-space: nowrap;
+}
+
+/* ディスプレイ設定 */
+
+#food .control{
+	display: flex;
+	align-items: center;
+    flex-direction: column;
+	margin: 50px 10px;
+}
+
+#comic .control, #game .control{
+	display: flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#game .control{
+	margin-bottom: 20%;
+	margin-top: 5%;
+}
+
+#dog .control{
+	display: flex;
+	align-items: center;
+    justify-content: flex-start;
+}
+
+#dog .Sideways{
+	display: flex;
+	gap: 20px;
+	padding-right: 20px;
+	flex-wrap: wrap;
+}
+
+#Pokémon .control{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+#home .content{
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+	justify-content: space-between;
+	
+}
+
+#home .content a{
+	display: flex;
+	width: 100%;
+	text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+	color: rgb(3, 1, 20);
+}
+
+#home .control{
+	width: calc(50% - 20px); /* 2列にするための幅調整 */
+	box-sizing: border-box;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #91c3ea;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#home .control:hover{
+	background-color: #c8d9e7;
+}
+
+/* 画像保存禁止（一応） */
+
+img{
+	pointer-events: none;
+}
+
+/* 背景色 */
+
+#home{
+	background-color: rgb(240, 233, 239);
+}
+
+#food{
+	background-color: rgb(255, 230, 184);
+}
+
+#comic{
+	background-color: rgb(231, 216, 216);
+}
+
+#dog{
+	background-color: rgb(210, 210, 224);
+}
+
+#Pokémon{
+	background-color: rgb(219, 230, 220);
+}
+
+#game{
+	background-color: rgb(234, 220, 199);
+}
+
+/* フェードイン */
+
+.anim-box {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.6s ease-out;
+}
+
+.anim-box.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* 犬アイコン画像サイズ調整 */
+
+.inu-img{
+	width: 20%!important;
+}
